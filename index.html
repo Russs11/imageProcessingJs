@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,19 +10,38 @@
 </head>
 <body>
     <div class="container">
-        <div class="left-side">
-            <!-- <div id="img"><img src="./src/img/photo.jpg" alt=""></div> -->
-            <canvas id="canvas" class="potrait center-flex" height="450" width="450"></canvas>
-        </div>
-        <div class="right-side">
-            <div class="filter-list">
-                <p class="text">Contrast</p>
-                <div class="contrast">
-                    <input class="slider" id="contrast" type="range" onchange="processContrast()" min="0" max="100" value="0">
-                </div>
+        <div class="img">
+            <div class="img-box">
+                <img id="img" />
+                <canvas id="canvas" height="1080" width="1920"></canvas>
             </div>
+            <div class="upload">
+                <label for="upload">Загрузить</label>
+                <input type="file" id="upload" />
+            </div>
+        </div>
+        <div class="filters">
+            <ul>
+                <li>
+                    <label for="contrast">Контраст</label>
+                    <input type="range" id="contrast" min="0" max="200" value="100" />
+                </li>
+                <li>
+                    <label for="brightness">Яркость</label>
+                    <input type="range" id="brightness" min="0" max="200" value="100" />
+                </li>
+                <li>
+                    <label for="saturate">Насыщенность</label>
+                    <input type="range" id="saturate" min="0" max="200" value="100" />
+                </li>
+                <li>
+                    <a download="img-edited" id="download">Скачать</a>
+                    <span>Сброс</span>
+                </li>
+            </ul>
         </div>
     </div>
     <script src="./src/script.js"></script>
 </body>
+
 </html>
